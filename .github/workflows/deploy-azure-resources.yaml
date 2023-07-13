@@ -30,6 +30,11 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - uses: azure/CLI@v1
+        with:
+          azcliversion: 2.50.0
+          inlineScript: |
+            az account list          
       - name: Install Bicep CLI
         run: |
           curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
