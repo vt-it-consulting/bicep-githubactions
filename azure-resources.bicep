@@ -46,6 +46,8 @@ output siteUrl string = deployWebsite.outputs.siteUrl
  param location string = 'westeurope'
  param storageName string = 'vtitconsultingsa'
 
+ targetScope = 'resourceGroup'
+
  resource storageaccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
    name: storageName
    location: location
