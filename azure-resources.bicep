@@ -43,7 +43,7 @@ output siteUrl string = deployWebsite.outputs.siteUrl
 
 */
 
- param location string = 'westus3'
+ param location string = 'westeurope'
  param storageName string = 'vtitconsultingsa'
 
  resource storageaccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
