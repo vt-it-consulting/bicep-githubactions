@@ -19,7 +19,11 @@ jobs:
       - name: Install Azure cli
         uses: elstudio/action-install-azure-cli@v1  
       - name: Checkout repository
-        uses: actions/checkout@v3       
+        uses: actions/checkout@v3
+      - name: Set up Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}               
       - name: Install Bicep CLI
         run: |
           curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
